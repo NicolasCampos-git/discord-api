@@ -12,7 +12,7 @@ RSpec.describe Foobara::DiscordApi::CreateMessage do
   let(:channel_id) { ENV["DISCORD_CHANNEL_ID"] }
   let(:content) { "Hello, World!" }
 
-  it "is successful", vcr: { record: :once } do
+  it "is successful", vcr: { record: :none } do
     expect(outcome).to be_success
     expect(result).to be_a(Foobara::DiscordApi::Message)
   end
